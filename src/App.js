@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useEffect, useState } from "react"
-import { Accordion } from 'react-bootstrap';
+import Accordion from 'react-bootstrap/Accordion'
 
 function App() {
 
@@ -24,14 +24,15 @@ function App() {
   return (
       <div className="App">
        
-       <Accordion defaultActiveKey="0">
-          {events.map(event => (
+       <Accordion >
+          {events.map((event, index) => (
           
             
-              <Accordion.Item eventKey={event.messageID}>
-                <Accordion.Header>{event.messageType}{event.messageID}</Accordion.Header>
+              <Accordion.Item eventKey={index.toString()}>
+                <Accordion.Header>{event.messageType}|{event.messageID}
+                </Accordion.Header>
                 <Accordion.Body>
-                  {event.messageBody}
+                    {event.messageBody}
                 </Accordion.Body>
               </Accordion.Item>
             
