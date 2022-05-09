@@ -30,7 +30,7 @@ function App() {
   return (
       <div className="App">
       <Eventcard/>
-      {/* <Asteroids/> */}
+     {/* <Asteroids/>  */}
        <Accordion >
           {events.slice(0,5).map((event, index) => (
           

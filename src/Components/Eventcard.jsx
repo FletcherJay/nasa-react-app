@@ -20,11 +20,20 @@ const Eventcard = () => {
   useEffect(() => {
     fetchPod()
   }, [])
-
+//what if "picture" of the day is a video
   return (
     <div>
-       <img src={pictures.url} style={{width: '100%'}}></img>
-
+    {(pictures.media_type === "video")
+       ? 
+       <iframe src={pictures.url}
+        frameBorder='0'
+        allow='autoplay; encrypted-media'
+        allowFullScreen
+        title='video'
+        width="100%"
+/> 
+       :<img src={pictures.url} style={{width: '100%'}}></img>
+    }
     </div>
   )
 }
