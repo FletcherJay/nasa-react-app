@@ -2,11 +2,12 @@ import './App.css';
 import React, { useEffect, useState } from "react"
 import Accordion from 'react-bootstrap/Accordion'
 import Eventcard from './Components/Eventcard';
-
+import Asteroids from './Components/Asteroids';
+import Patents from './Components/Patents';
 function App() {
 
     let API_KEY = 'qnijM37ihRFu5YgP4NdXg2fn3xUIqVUqxcy5ZxZy'
-    let startDate = '2021/05/05'
+    let startDate = '2022-05-01'
     let endDate = new Date()
     let DONKI_URL = `https://api.nasa.gov/DONKI/notifications?startDate=${startDate}&endDate=${endDate}&type=all&api_key=${API_KEY}`
 
@@ -22,15 +23,16 @@ function App() {
 
   useEffect(() => {
     fetchData()
-  }, [])
+  }, []);
 
 
 
   return (
       <div className="App">
       <Eventcard/>
+      {/* <Asteroids/> */}
        <Accordion >
-          {events.map((event, index) => (
+          {events.slice(0,5).map((event, index) => (
           
             
               <Accordion.Item eventKey={index.toString()}>
