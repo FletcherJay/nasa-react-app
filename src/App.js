@@ -36,6 +36,7 @@ function App() {
       <Mainnav/>
 
      {/* <Asteroids/>  */}
+     <div className="donki-location">
        <Accordion >
           {events.slice(0,5).map((event, index) => (
           
@@ -51,6 +52,7 @@ function App() {
             
             ))}
             </Accordion>
+            </div>
       </div>
     );
 };
