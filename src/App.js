@@ -4,6 +4,8 @@ import Accordion from 'react-bootstrap/Accordion'
 import Eventcard from './Components/Eventcard';
 import Asteroids from './Components/Asteroids';
 import Patents from './Components/Patents';
+import Mainnav from './Components/Mainnav';
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
 
     let API_KEY = 'qnijM37ihRFu5YgP4NdXg2fn3xUIqVUqxcy5ZxZy'
@@ -29,8 +31,10 @@ function App() {
 
   return (
       <div className="App">
+      <Mainnav/>
       
       <Eventcard/>
+
      {/* <Asteroids/>  */}
        <Accordion >
           {events.slice(0,5).map((event, index) => (
