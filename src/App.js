@@ -31,9 +31,9 @@ function App() {
 
   return (
       <div className="App">
-      <Mainnav/>
       
       <Eventcard/>
+      <Mainnav/>
 
      {/* <Asteroids/>  */}
        <Accordion >
