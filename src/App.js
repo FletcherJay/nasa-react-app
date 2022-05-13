@@ -35,7 +35,7 @@ function App() {
       <Eventcard/>
       <Mainnav/>
 
-     {/* <Asteroids/>  */}
+     <Asteroids/> 
      <div className="donki-location">
        <Accordion >
           {events.slice(0,5).map((event, index) => (
@@ -45,7 +45,7 @@ function App() {
                 <Accordion.Header>{event.messageType}|{event.messageID}
                 </Accordion.Header>
                 <Accordion.Body>
-                    <textarea style={{height: "50vh", width: "80vw"}}>{event.messageBody.split("#").join("\n")}</textarea>
+                    <p >{event.messageBody.split("#").join("\n")}</p>
                 </Accordion.Body>
               </Accordion.Item>
             

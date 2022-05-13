@@ -12,3 +12,16 @@
   padding-right: 100px;
 }
 
+.asteroid-location {
+  position: absolute;
+  right: 3rem;
+  bottom: 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  padding-left: 100px;
+  padding-right: 100px;
+}
