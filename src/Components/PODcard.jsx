@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 
-const Eventcard = () => {
+const PODcard = () => {
   let startDate = '2022-05-01'
   let tempDate = new Date()
   let endDate = (tempDate.getUTCFullYear()) + "-" + (tempDate.getMonth() + 1)+ "-" + (tempDate.getUTCDate());
@@ -38,4 +38,4 @@ const Eventcard = () => {
   )
 }
 
-export default Eventcard
+export default PODcard

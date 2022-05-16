@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Accordion } from "react-bootstrap"
+import axios from "axios"
 
 const Patents = () => {
 
@@ -10,19 +11,30 @@ const Patents = () => {
   let Patents_URL = `https://api.nasa.gov/techtransfer/patent/?api_key=${API_KEY} `
 
   const [patents, setPatents] = useState([])
-  const fetchPatents = () => {
-    fetch(Patents_URL)
-        .then(res => res.json())
-        .then(data => {
-          setPatents(data)
-      })
-  }
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
+    const fetchPatents = async() => {
+     await axios.get(Patents_URL)
+        .then((res) => {
+          setPatents(res.data);
+          setLoading(false);
+        }).catch((err) => {
+          setLoading(false);
+          setError(true);
+          setPatents();
+            console.log(err)
+     })
+    }
     fetchPatents()
   }, [])
 
-  return (
+  return loading ? (
+    "loading..." 
+    ) : error ? (
+      "Error!"
+    ) : patents ? (
     <div>
     <Accordion >
           
@@ -40,7 +52,7 @@ const Patents = () => {
             
             </Accordion>
     </div>
-  )
+  ): null;
 }
 
 export default Patents

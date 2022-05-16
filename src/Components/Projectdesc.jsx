@@ -1,51 +1,52 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
 import { Accordion } from "react-bootstrap"
-import Projectdesc from "./Projectdesc"
 
-const Projects = () => {
-  
+const Projectdesc = (props) => {
+
   let tempDate = new Date()
   let endDate = (tempDate.getUTCFullYear()) + "-" + (tempDate.getMonth() + 1)+ "-" + "01";
   let API_KEY = 'qnijM37ihRFu5YgP4NdXg2fn3xUIqVUqxcy5ZxZy'
-  let Projects_URL = `https://api.nasa.gov/techport/api/projects?updatedSince=${endDate}&api_key=${API_KEY} `
+  let Projects_URL = `https://api.nasa.gov/techport/api/projects/${props.project.projectId}?api_key=${API_KEY} `
   
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [projects, setProjects] = useState([])
+  const [project, setProject] = useState([])
 
   useEffect(() => {
-    const fetchProjects = async() => {
+    const fetchProject = async() => {
      await axios.get(Projects_URL)
         .then((res) => {
-          setProjects(res.data);
+          setProject(res.data);
           setLoading(false);
         }).catch((err) => {
           setLoading(false);
           setError(true);
-          setProjects();
+         setProject();
             console.log(err)
      })
     }
-    fetchProjects()
+    fetchProject()
   }, [])
-  
- 
-
 
   return loading ? (
     "loading..." 
     ) : error ? (
       "Error!"
-    ) : projects ? (
+    ) : project ? (
     <div>
-    <Accordion>
-    {projects.projects.map((project, index) => (
+    
+    <Accordion.Item eventKey={project.project.projectId}>
+                <Accordion.Header>{project.project.title} | {project.project.acronym}
+                </Accordion.Header>
+                <Accordion.Body>
+                    {project.project.description}
+                </Accordion.Body>
+              </Accordion.Item>
+    
       
-   <Projectdesc project={project} />))}
-   </Accordion>
     </div>
   ): null;
 }
 
-export default Projects
+export default Projectdesc

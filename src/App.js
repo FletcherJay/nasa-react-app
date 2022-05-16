@@ -1,58 +1,27 @@
 import './App.css';
-import React, { useEffect, useState } from "react"
-import Accordion from 'react-bootstrap/Accordion'
-import Eventcard from './Components/Eventcard';
+import React from "react"
+import PODcard from './Components/PODcard';
 import Asteroids from './Components/Asteroids';
 import Patents from './Components/Patents';
 import Mainnav from './Components/Mainnav';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Donkievents from './Components/Donkievents';
+import Projects from './Components/Projects';
 function App() {
-
-    let API_KEY = 'qnijM37ihRFu5YgP4NdXg2fn3xUIqVUqxcy5ZxZy'
-    let startDate = '2022-05-01'
-    let endDate = new Date()
-    let DONKI_URL = `https://api.nasa.gov/DONKI/notifications?startDate=${startDate}&endDate=${endDate}&type=all&api_key=${API_KEY}`
-
-  const [events, setEvents] = useState([])
-  const fetchData = () => {
-    fetch(DONKI_URL)
-        .then(res => res.json())
-        .then(data => {
-          setEvents(data)
-      })
-  }
-
-
-  useEffect(() => {
-    fetchData()
-  }, []);
-
-
 
   return (
       <div className="App">
-      
-      <Eventcard/>
-      <Mainnav/>
+      {/* nasa APOD API /background pic */}
+      <PODcard/>
 
-     <Asteroids/> 
-     <div className="donki-location">
-       <Accordion >
-          {events.slice(0,5).map((event, index) => (
-          
-            
-              <Accordion.Item eventKey={index.toString()}>
-                <Accordion.Header>{event.messageType}|{event.messageID}
-                </Accordion.Header>
-                <Accordion.Body>
-                    <p >{event.messageBody.split("#").join("\n")}</p>
-                </Accordion.Body>
-              </Accordion.Item>
-            
-            
-            ))}
-            </Accordion>
-            </div>
+      <Mainnav/>
+      {/* nasa Donki API */}
+      <Donkievents/>
+      {/* nasa Asteroids NeoWs API */}
+      <Asteroids/> 
+      {/* nasa TechTransfer API */}
+      <Patents/>
+      <Projects/>
       </div>
     );
 };
