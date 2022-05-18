@@ -39,7 +39,8 @@ const Donkievents = () => {
                 <Accordion.Header>{event.messageType}|{event.messageID}
                 </Accordion.Header>
                 <Accordion.Body>
-                    <textarea style={{height: "50vh", width: "60vw"}}>{event.messageBody}</textarea>
+                    <textarea style={{height: "50vh", width: "25vw"}}>{event.messageBody}</textarea>
+                    <p><a href={event.messageURL} target="_blank">Message Link</a></p>
                 </Accordion.Body>
               </Accordion.Item>
             ))}

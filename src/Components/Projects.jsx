@@ -38,11 +38,11 @@ const Projects = () => {
     ) : error ? (
       "Error!"
     ) : projects ? (
-    <div>
-    <Accordion>
-    {projects.projects.map((project, index) => (
+    <div className="project-location">
+    <Accordion >
+    {projects.projects.slice(0,5).map((project, index) => (
       
-   <Projectdesc project={project} />))}
+   <Projectdesc project={project}  />))}
    </Accordion>
     </div>
   ): null;

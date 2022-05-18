@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
-import { Accordion } from "react-bootstrap"
+import { Accordion, Button } from "react-bootstrap"
 
 const Projectdesc = (props) => {
 
@@ -39,12 +39,15 @@ const Projectdesc = (props) => {
     <Accordion.Item eventKey={project.project.projectId}>
                 <Accordion.Header>{project.project.title} | {project.project.acronym}
                 </Accordion.Header>
-                <Accordion.Body>
-                    {project.project.description}
+                <Accordion.Body style={{ width: "40vw"}}>
+                    {project.project.description} {project.project.benefits}
+                    <p>Research Location: {project.project.leadOrganization.organizationName}
+                     </p>
+                     <Button href= {`${project.project.website}`}  >{project.project.title}</Button>
                 </Accordion.Body>
               </Accordion.Item>
     
-      
+              
     </div>
   ): null;
 }

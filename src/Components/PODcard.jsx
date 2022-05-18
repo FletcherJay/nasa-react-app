@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { Card } from "react-bootstrap"
 
 const PODcard = () => {
   let startDate = '2022-05-01'
@@ -34,6 +35,13 @@ const PODcard = () => {
 /> 
        :<img src={pictures.url} style={{width: '100%'}}></img>
     }
+    <Card bg="dark" text="white">
+    <Card.Text>
+    <p>{pictures.title}</p>
+      {pictures.explanation} - copyright - {pictures.copyright}
+        <a href={pictures.url} target="_blank"> Full Image</a>
+    </Card.Text>
+    </Card>
     </div>
   )
 }

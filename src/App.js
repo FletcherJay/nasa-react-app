@@ -1,4 +1,3 @@
-import './App.css';
 import React from "react"
 import PODcard from './Components/PODcard';
 import Asteroids from './Components/Asteroids';
@@ -7,6 +6,8 @@ import Mainnav from './Components/Mainnav';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Donkievents from './Components/Donkievents';
 import Projects from './Components/Projects';
+import './App.css';
+
 function App() {
 
   return (
@@ -21,6 +22,7 @@ function App() {
       <Asteroids/> 
       {/* nasa TechTransfer API */}
       <Patents/>
+      {/* nasa Techport api maps ids to another api query based on id */}
       <Projects/>
       </div>
     );

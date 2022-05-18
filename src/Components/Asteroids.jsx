@@ -31,14 +31,19 @@ const Asteroids = () => {
     ) : error ? (
       "Error!"
     ) : asteroids ? (
-    <div className="asteroid-location">
+    <div className="asteroid-location" >
     <Accordion >
           {asteroids.near_earth_objects[today].map((event, index) => (
               <Accordion.Item eventKey={index.toString()}>
-                <Accordion.Header>{event.id}|{event.name}
+                <Accordion.Header classname="nasa-colors">Asteroid: {event.name}
                 </Accordion.Header>
                 <Accordion.Body>
-                    <p >{event.absolute_magnitude_h}</p>
+                    <p >Absolute Magnitude: {event.absolute_magnitude_h}</p>
+                    <p>Relative Velocity: {event.close_approach_data[0].relative_velocity.miles_per_hour} MPH</p>
+                    <p>Distance Asteroid missed {event.close_approach_data[0].orbiting_body} by: {event.close_approach_data[0].miss_distance.miles} miles </p>
+                    <p>Estimated Diameter of Asteroid: {event.estimated_diameter.feet.estimated_diameter_max} Feet</p>
+                    <p>Potentially Hazardous: {`${event.is_potentially_hazardous_asteroid}`}</p>
+                    <a href={event.nasa_jpl_url} target="_blank"> More Info</a>
                 </Accordion.Body>
               </Accordion.Item>
             ))}
