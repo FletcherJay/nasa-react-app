@@ -1,38 +1,5 @@
-.donki-location {
-  position: absolute;
-  left: 1rem;
-  top: 10rem;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  text-align: center;
-  padding-left: 100px;
-  padding-right: 100px;
-}
 
-.asteroid-location {
-  position: absolute;
-  left: 75%;
-  top: 10rem;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  text-align: center;
-  padding-left: 100px;
-  padding-right: 100px;
-}
  .accordion-button {
    background-color: rgb(16, 91, 216);
    color: #fff
- }
- .project-location {
-  position: absolute;
-  left: 30%;
-  top: 10rem;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  text-align: center;
-  padding-left: 100px;
-  padding-right: 100px;
  }

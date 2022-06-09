@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Donkievents from './Components/Donkievents';
 import Projects from './Components/Projects';
 import './App.css';
+import { Tab, Tabs } from "react-bootstrap";
 
 function App() {
 
@@ -17,13 +18,22 @@ function App() {
 
       <Mainnav/>
       {/* nasa Donki API */}
-      <Donkievents/>
+      <Tabs defaultActiveKey="events" id="uncontrolled-tab-example" className="mb-3">
+        <Tab eventKey="events" title="Events">
+          <Donkievents/>
+        </Tab>
       {/* nasa Asteroids NeoWs API */}
-      <Asteroids/> 
+        <Tab eventKey="Asteroids" title="Asteroids">
+          <Asteroids/> 
+        </Tab>
+      {/* nasa Techport api maps ids to another api query based on id */}
+        <Tab eventKey="Projects" title="Projects">
+          <Projects/>
+        </Tab>
+      </Tabs>
       {/* nasa TechTransfer API */}
       <Patents/>
-      {/* nasa Techport api maps ids to another api query based on id */}
-      <Projects/>
+
       </div>
     );
 };
