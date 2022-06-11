@@ -23,7 +23,7 @@ Built with:
 
 ## Installation
 
-You clone a repository with git clone [<url>].
+You clone a repository with git clone (url).
 
 $ git clone https://github.com/FletcherJay/nasa-react-app.git
 
