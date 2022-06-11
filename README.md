@@ -8,7 +8,7 @@ I created this app, because I was curious on how "active" our sun is, and as it 
 
 ## Code Style
 
-using ES7+ React/Redux/React-Native snippets  by: dsznajder
+using ES7+ React/Redux/React-Native snippets  by: **dsznajder**,
 for the jsx im using the rafce shortcut to create the react component
 
 ## Tech/Frameworks used
@@ -23,7 +23,8 @@ Built with:
 
 ## Installation
 
-You clone a repository with git clone <url>.
+You clone a repository with git clone [<url>].
+
 $ git clone https://github.com/FletcherJay/nasa-react-app.git
 
 ## Available Scripts
@@ -50,6 +51,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 **App Developers**: Fletcher Johnson
 
-Credit
+## Credit
 
 ### All credit for the API's goes to the developers @ https://github.com/nasa/api-docs/blob/gh-pages/README.md
