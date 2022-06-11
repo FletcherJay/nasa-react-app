@@ -18,7 +18,7 @@ function App() {
 
       <Mainnav/>
       {/* nasa Donki API */}
-      <Tabs defaultActiveKey="events" id="uncontrolled-tab-example" className="mb-3">
+      <Tabs defaultActiveKey="events  " id="uncontrolled-tab-example" className="mb-3">
         <Tab eventKey="events" title="Events">
           <Donkievents/>
         </Tab>

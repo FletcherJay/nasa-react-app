@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+Nasa-React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+    This project take recent data from a few of Nasa's API's and displays them on one page and shows you whats going on in space and around Earth, and ongoing projects
 
-## Available Scripts
+Motivation
 
-In the project directory, you can run:
+    I created this app, because I was curious on how "active" our sun is, and as it comes out, itis plenty active. Then that got me thinking about what else is going on in space and projects involved.
 
-### `npm start`
+Code Style
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    using ES7+ React/Redux/React-Native snippets  by: dsznajder
+    for the jsx im using the rafce shortcut to create the react component
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Tech/Frameworks used
 
-### `npm test`
+    Built with:
+    - HTML
+    - CSS
+    - JS
+    - React
+    - React Bootstrap
+    - Font Awesome
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Installation
 
-### `npm run build`
+    You clone a repository with git clone <url>.
+    $ git clone https://github.com/FletcherJay/nasa-react-app.git
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    ## Available Scripts
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    In the project directory, you can run:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ### `npm start`
 
-### `npm run eject`
+    Runs the app in the development mode.\
+    Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+API Reference
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    - Projects API: https://api.nasa.gov/techport/api/projects?updatedSince=${endDate}&api_key=${API_KEY} 
+    *this one is used twice, first time to grab the latest project ID's, then the second time to iterate through the the specific ID's that were produced and grab all the data for those projects*
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    - Picture Of the Day API: https://api.nasa.gov/planetary/apod?api_key=${API_KEY} 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    - Asteroids API: https://api.nasa.gov/neo/rest/v1/feed?start_date=${today}&end_date=${today}&api_key=${API_KEY} 
 
-## Learn More
+    - DONKI Events API (solar events): https://api.nasa.gov/DONKI/notifications?startDate=${startDate}&endDate=${endDate}&type=all&api_key=${API_KEY}
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    - Patents API: https://api.nasa.gov/techtransfer/patent/?api_key=${API_KEY}
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+** App Developers**: Fletcher Johnson
 
-### Code Splitting
+Credit
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    All credit for the API's goes to the developers @ https://github.com/nasa/api-docs/blob/gh-pages/README.md
