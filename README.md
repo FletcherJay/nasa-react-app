@@ -24,9 +24,10 @@ Built with:
 ## Installation
 
 You clone a repository with git clone (url).
-
+```
 $ git clone https://github.com/FletcherJay/nasa-react-app.git
-
+```
+p.s. the '$' doesnt go in the terminal command
 ## Available Scripts
 
 In the project directory, you can run:
