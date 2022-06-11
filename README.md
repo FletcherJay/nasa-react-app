@@ -1,4 +1,4 @@
-## Nasa-React App
+# Nasa-React App
 
 This project take recent data from a few of Nasa's API's and displays them on one page and shows you whats going on in space and around Earth, and ongoing projects
 
