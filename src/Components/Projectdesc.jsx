@@ -43,7 +43,7 @@ const Projectdesc = (props) => {
                     {project.project.description} {project.project.benefits}
                     <p>Research Location: {project.project.leadOrganization.organizationName}
                      </p>
-                     <Button href= {`${project.project.website}`}  >{project.project.title}</Button>
+                     <Button href= {`${project.project.website}`} target="_blank"  >{project.project.title}</Button>
                 </Accordion.Body>
               </Accordion.Item>
     
